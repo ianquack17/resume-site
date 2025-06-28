@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #0054a6;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.75rem;
+    padding-left: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav a {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: .75rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: #0054a6;
+}
+
