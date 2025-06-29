@@ -4,6 +4,7 @@ body {
     background-color: #1e1e1e;
     color: #fff;
     margin: 0;
+    height: 100%;
 }
 
 .header {
@@ -25,14 +26,17 @@ body {
     padding-left: 1rem;
     color: white;
     text-decoration: none;
+    font-family: "Lato", sans-serif;
 }
 
 .nav {
     display: flex;
     gap: 1.25rem;
+    padding-right: 1rem;
 }
 
 .nav a {
+    font-family: "Lato", sans-serif;
     font-size: 1.25rem;
     margin-left: 1rem;
     color: white;
@@ -47,3 +51,133 @@ body {
     color: #0054a6;
 }
 
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    color: black;
+  }
+
+.site-footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.wrapper {
+    padding-top: 64px;
+    min-height: calc(100vh - 60px);
+}
+
+.landing {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 2rem;
+    background-color: #1e1e1e
+}
+
+.profile-pic img{
+    width: 300px;
+    height: 300px;
+    border-radius: 15%;
+    object-fit: cover;
+}
+
+.landing-content {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.landing-text {
+    flex: 1;
+}
+
+.landing-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.landing-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.landing-button a{
+    display: inline-block;
+    font: 10;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: .75rem .75rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-banner {
+    display: flex;
+    align-items: center;       
+    height: 300px;            
+    padding-left: 3rem;         
+    background-color: white;
+}
+
+.about-banner-content {
+    display: flex;
+    flex-direction: column;  
+    text-align: left;
+  }
+
+.about-banner-content h1 {
+    font-family: "Lato", sans serif;
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 0;
+}
+ 
+.about-banner-content p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    margin-top: 0;
+}
+
+.profile-pic-2 img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem;
+    gap: 2rem;
+    flex-wrap: wrap; /* Optional if you want it to stack on small screens */
+  }
+
+.about-content-text {
+    text-align: left;
+}
+
+.about-content-text h1 {
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+}
+
+.about-content-text p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+}
