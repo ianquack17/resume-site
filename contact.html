@@ -25,21 +25,41 @@
                     <p>Where to reach me</p>
                 </div>
             </div>
-            <form
-                action="https://formspree.io/f/xzzgokvg"
-                method="POST"
-            >
-                <label>
-                    Your email:
-                    <input type="email" name="email">
-                </label>
-                <label>
-                    Your message:
-                    <textarea name="message"></textarea>
-                </label>
-                 <!-- your other form fields go here -->
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required/>
+                <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
+            <script>
+                const form = document.getElementById("contact-form")
+
+                form.addEventListener("submit", async (e) => {
+                    e.preventDefault();
+
+                    const formData = new FormData(form);
+                    const data = {
+                        name: formData.get("name"),
+                        email: formData.get("email"),
+                        message: formData.get("message")
+                    };
+
+                    const response = await fetch("http://127.0.0.1:5000/contact", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        alert("Message sent!");
+                        form.reset();
+                    } else {
+                        alert("There was a problem sending your message.");
+                    }
+                });
+            </script>
         </div>
         <footer class="site-footer">
             <p>&copy 2025 Ian Quack. All rights reserved.</p>
