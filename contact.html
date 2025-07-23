@@ -25,12 +25,15 @@
                     <p>Where to reach me</p>
                 </div>
             </div>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="email" name="email" placeholder="Your Email" required/>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <div class="contact-card">
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required/>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                </form>
+                <div id="form-feedback" class="form-feedback"></div>
+            </div>
             <script>
                 const form = document.getElementById("contact-form")
 
@@ -44,19 +47,30 @@
                         message: formData.get("message")
                     };
 
-                    const response = await fetch("https://resume-backend-yhog.onrender.com/contact", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(data)
-                    });
+                    const feedback = document.getElementById("form-feedback");
+                    feedback.textContent = "";
+                    feedback.className = "form-feedback";
 
-                    if (response.ok) {
-                        alert("Message sent!");
-                        form.reset();
-                    } else {
-                        alert("There was a problem sending your message.");
+                    try {
+                        const response = await fetch("https://resume-backend-yhog.onrender.com/contact", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        if (response.ok) {
+                            feedback.textContent = "Message sent!";
+                            feedback.classList.add("success");
+                            form.reset();
+                        } else {
+                            feedback.textContent = "There was a problem sending your message.";
+                            feedback.classList.add("error");
+                        }
+                    } catch (err) {
+                        feedback.textContent = "There was a problem sending your message.";
+                        feedback.classList.add("error");
                     }
                 });
             </script>

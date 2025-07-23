@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     text-align: center;
     background-color: #1e1e1e;
-    color: #fff;
+    color: #222;
     margin: 0;
     height: 100%;
 }
@@ -37,13 +37,13 @@ body {
 
 .nav a {
     font-family: "Lato", sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-left: 1rem;
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    padding: .75rem 1rem;
-    transition: background-color 0.3s ease;
+    padding: .5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav a:hover {
@@ -56,14 +56,19 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    background-color: white;
-    color: black;
+    background-color: #fff;
+    color: #222;
+    border-top: 1px solid #e0e0e0;
   }
 
 .site-footer a {
-    color: black;
+    color: #0054a6;
     text-decoration: none;
     font-size: 1.5rem;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 .wrapper {
@@ -82,10 +87,12 @@ body {
 }
 
 .profile-pic img{
-    width: 300px;
-    height: 300px;
-    border-radius: 15%;
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
     object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
 }
 
 .landing-content {
@@ -99,7 +106,7 @@ body {
 
 .landing-text {
     flex: 1;
-    color: black;
+    color: #222;
 }
 
 .landing-text h1 {
@@ -114,27 +121,32 @@ body {
 
 .landing-button a{
     display: inline-block;
-    font: 10;
     background-color: #0054a6;
-    color: white;
-    border-radius: 10px;
-    padding: .75rem .75rem;
+    color: #fff;
+    border-radius: 6px;
+    padding: .75rem 1.25rem;
     text-decoration: none;
     font-weight: bold;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
 }
 
 .landing-button a:hover {
-    transition: all 0.1s;
-    transform: translateY(-3px);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8)
+    background-color: #003e7a;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
 }
 
 .about-banner {
     display: flex;
     align-items: center;       
-    height: 300px;            
+    height: 180px;            
     padding-left: 3rem;         
-    background-color: white;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .about-banner-content {
@@ -145,15 +157,15 @@ body {
 
 .about-banner-content h1 {
     font-family: "Lato", sans serif;
-    font-size: 3rem;
-    color: black;
+    font-size: 2rem;
+    color: #222;
     margin-bottom: 0;
 }
  
 .about-banner-content p {
     font-family: "Lato", sans-serif;
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1.1rem;
+    color: #444;
     margin-top: 0;
 }
 
@@ -215,6 +227,304 @@ ul {
 
 hr {
     border: none;
-    border-top: 2px dashed #888;
+    border-top: 1px solid #e0e0e0;
     margin: 2rem 0;
+}
+
+/* Contact Form Card */
+.contact-card {
+    background: #fff;
+    max-width: 400px;
+    margin: 2rem auto 3rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: #fff;
+    color: #222;
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s, border 0.2s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border: 1.5px solid #0054a6;
+    box-shadow: 0 0 0 1.5px #0054a6;
+}
+
+#contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#contact-form button {
+    background: linear-gradient(90deg, #0054a6 60%, #007fff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.1s;
+}
+
+#contact-form button:hover {
+    background: linear-gradient(90deg, #007fff 60%, #0054a6 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.form-feedback {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    min-height: 1.5em;
+    text-align: center;
+    transition: color 0.2s;
+}
+.form-feedback.success {
+    color: #197d2b;
+}
+.form-feedback.error {
+    color: #b00020;
+}
+
+/* Minimal Card Styles for Main Content */
+.landing-card, .about-card, .project-card, .contact-card {
+    background: #fff;
+    max-width: 900px;
+    margin: 2.5rem auto 3rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.landing-card {
+    justify-content: center;
+}
+
+.landing-content {
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.profile-pic img, .profile-pic-2 img {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+}
+
+.landing-text, .about-content-text, .project-content {
+    color: #222;
+    text-align: left;
+}
+
+.landing-text h1, .about-content-text h1, .about-content-text h2, .project-content h1, .project-content h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.landing-text p, .about-content-text p, .project-content p, .about-content-text li, .project-content li {
+    font-family: "Lato", sans-serif;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.about-content-text section {
+    margin-bottom: 1.5rem;
+}
+
+.project-content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.project-content li {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Button Styles */
+.landing-button a, #contact-form button {
+    display: inline-block;
+    background-color: #0054a6;
+    color: #fff;
+    border-radius: 6px;
+    padding: .75rem 1.25rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+.landing-button a:hover, #contact-form button:hover {
+    background-color: #003e7a;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+#contact-form button i {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .landing-card, .about-card, .project-card, .contact-card {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .profile-pic img, .profile-pic-2 img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-banner {
+        height: 90px;
+        padding-left: 0.5rem;
+    }
+    .landing-text h1, .about-banner-content h1 {
+        font-size: 1.3rem;
+    }
+    .about-content-text h2, .project-content h2 {
+        font-size: 1rem;
+    }
+    .site-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Remove excessive padding from project-content on all screens */
+.project-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Panorama Carousel Styles */
+.panorama-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2.5rem auto 0 auto;
+    max-width: 900px;
+    overflow: hidden;
+    height: 180px;
+    position: relative;
+}
+.panorama-item {
+    flex: 0 0 120px;
+    height: 120px;
+    background: #444;
+    border-radius: 8px;
+    opacity: 0.5;
+    transition: all 0.5s cubic-bezier(.4,2,.6,1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+}
+.panorama-item:nth-child(3) {
+    flex: 0 0 220px;
+    height: 180px;
+    opacity: 1;
+    background: #0054a6;
+    z-index: 2;
+    font-size: 2.5rem;
+}
+
+.panorama-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.panorama-item:nth-child(3) img {
+    object-position: top;
+}
+
+@media (max-width: 900px) {
+    .panorama-carousel {
+        max-width: 98vw;
+        height: 110px;
+        gap: 0.7rem;
+    }
+    .panorama-item {
+        flex: 0 0 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+    .panorama-item:nth-child(3) {
+        flex: 0 0 110px;
+        height: 110px;
+        font-size: 1.2rem;
+    }
 }

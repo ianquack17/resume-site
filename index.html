@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="wrapper">
-            <div class="landing">
+            <div class="landing-card">
                 <div class="landing-content">
                     <div class="profile-pic">
-                        <img src="assets/pfp.jpg" alt="Profile Picture">
+                        <img src="assets/pfp.jpg" alt="Portrait of Ian Quack">
                     </div>
                     <div class="landing-text">
                         <h1>Welcome to my Portfolio</h1>
@@ -33,10 +33,29 @@
                     </div>
                 </div>
             </div>
+            <div class="panorama-carousel">
+                <div class="panorama-item"><img src="assets/carousel_1.JPG" alt="Portrait of Ian Quack"></div>
+                <div class="panorama-item"><img src="assets/carousel_2.jpeg" alt="Lacrosse defense"></div>
+                <div class="panorama-item"><img src="assets/carousel_3.jpeg" alt="Portrait of Ian Quack"></div>
+                <div class="panorama-item"><img src="assets/carousel_4.jpeg" alt="Portrait of Ian Quack"></div>
+                <div class="panorama-item"><img src="assets/carousel_5.jpeg" alt="Portrait of Ian Quack"></div>
+            </div>
         </div>
         <footer class="site-footer">
             <p>&copy 2025 Ian Quack. All rights reserved.</p>
             <a href="https://www.linkedin.com/in/ianquack" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         </footer>
+        <script>
+        // Simple panorama carousel animation
+        const carousel = document.querySelector('.panorama-carousel');
+        if (carousel) {
+            setInterval(() => {
+                const items = carousel.querySelectorAll('.panorama-item');
+                if (items.length > 1) {
+                    carousel.appendChild(items[0]);
+                }
+            }, 3000);
+        }
+        </script>
     </body>
 </html>
