@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: resume-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: SENDGRID_API_KEY
+        sync: false
