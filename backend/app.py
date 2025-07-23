@@ -16,13 +16,19 @@ def home():
 
 @app.route("/contact", methods=["POST", "OPTIONS"])
 def contact():
+    print("Hit the /contact endpoint")
+
     if request.method == "OPTIONS":
         return jsonify({}), 200
     
-    data = request.get_json()
-    name = data.get("name")
-    email = data.get("email")
-    message = data.get("message")
+    try:
+        data = request.get_json()
+        name = data.get("name")
+        email = data.get("email")
+        message = data.get("message")
+        print(f"Parsed values: name={name}, email={email}, message={message}")
+    except Exception as e:
+        print("Failed to parse Json:", e)
 
     #Validation checking
     if not name:
