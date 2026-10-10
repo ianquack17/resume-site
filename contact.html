@@ -2,8 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact</title>
         <link rel="stylesheet" href="style.css">
+        <script src="site.js" defer></script>
         <script src="https://kit.fontawesome.com/171234e241.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +14,16 @@
     <body>
         <div class="header">
             <div><a href="index.html" class="logo">Ian Quack</a></div>
-            <div class="nav">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="site-nav" aria-label="Primary navigation">
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </div>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </nav>
         </div>
         <div class="wrapper">
             <div class="about-banner">
@@ -27,9 +34,12 @@
             </div>
             <div class="contact-card">
                 <form id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required/>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <label for="name">Your name</label>
+                    <input id="name" type="text" name="name" autocomplete="name" placeholder="Ian Quack" required>
+                    <label for="email">Your email</label>
+                    <input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                    <label for="message">Your message</label>
+                    <textarea id="message" name="message" placeholder="How can I help?" required></textarea>
                     <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
                 </form>
                 <div id="form-feedback" class="form-feedback"></div>
