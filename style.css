@@ -57,10 +57,6 @@ body {
     background-color: rgba(255, 255, 255, 0.16);
 }
 
-.menu-toggle {
-    display: none;
-}
-
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -487,87 +483,38 @@ hr {
 
 @media (max-width: 700px) {
     .header {
-        min-height: 64px;
-        padding: 0.75rem 1rem;
+        display: grid;
+        gap: 0.55rem;
+        grid-template-columns: 1fr;
+        padding: 0.7rem 1rem 0.65rem;
     }
 
     .logo {
         display: block;
-        font-size: 1.35rem;
+        font-size: 1.25rem;
         padding-left: 0;
-    }
-
-    .menu-toggle {
-        align-items: center;
-        background: transparent;
-        border: 0;
-        border-radius: 6px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        height: 44px;
-        justify-content: center;
-        padding: 0 10px;
-        width: 44px;
-    }
-
-    .menu-toggle:focus-visible {
-        outline: 3px solid #fff;
-        outline-offset: 2px;
-    }
-
-    .menu-toggle span {
-        background: #fff;
-        border-radius: 2px;
-        display: block;
-        height: 2px;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-        width: 23px;
-    }
-
-    .nav-open .menu-toggle span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-open .menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-open .menu-toggle span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        text-align: center;
     }
 
     .nav {
-        background: #0054a6;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
         display: grid;
-        gap: 0;
-        left: 0;
-        opacity: 0;
-        padding: 0.5rem 1rem 0.75rem;
-        pointer-events: none;
-        position: absolute;
-        right: 0;
-        top: 100%;
-        transform: translateY(-8px);
-        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-        visibility: hidden;
-    }
-
-    .nav-open .nav {
+        gap: 0.35rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         opacity: 1;
+        padding: 0;
         pointer-events: auto;
-        transform: translateY(0);
+        position: static;
+        transform: none;
         visibility: visible;
+        width: 100%;
     }
 
     .nav a {
-        font-size: 1rem;
+        font-size: 0.95rem;
         margin: 0;
-        padding: 0.85rem 1rem;
-        text-align: left;
+        min-width: 0;
+        padding: 0.65rem 0.25rem;
+        text-align: center;
     }
 
     .landing-card,
@@ -648,6 +595,26 @@ hr {
         line-height: 1.6;
     }
 
+    .about-content-text,
+    .project-content,
+    .about-content-text section,
+    .project-entry,
+    .about-content-text p,
+    .project-content p,
+    .about-content-text ul,
+    .project-feature-list {
+        box-sizing: border-box;
+        max-width: 100%;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .about-content-text p,
+    .project-content p {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .about-content-text ul {
         display: grid;
         gap: 0.65rem;
@@ -666,6 +633,11 @@ hr {
         font-size: 1.25rem;
         line-height: 1.25;
         margin-top: 0;
+    }
+
+    .project-entry h2 span {
+        display: block;
+        margin-top: 0.2rem;
     }
 
     .project-entry {
